@@ -192,20 +192,22 @@ class CountDownTimer extends WP_Widget {
 		}
 		
 		
-        echo $before_widget;
-        /* if ( $title ){
+        /*echo $before_widget;
+        if ( $title ){
             echo $before_title . $title . $after_title;
         }
-		echo '<div id="'.$args['widget_id'].'-widget">';
+		 echo '<div id="'.$args['widget_id'].'-widget">';
 		echo '<div id="'.$args['widget_id'].'-tophtml" class="'.$style.'-tophtml" >';
         if($tophtml){
             echo stripslashes($tophtml); 
         }
 		echo '</div>';*/
 		
+
+
 		//drop in the dashboard
-		echo '<div id="'.$args['widget_id'].'-dashboard" class="'.$style.'-dashboard">';
-		
+		echo '<div id="'.$args['widget_id'].'-dashboard" class="'.$style.'-dashboard iasd-widget">';
+			echo '<div class="title">'. __('faltam', 'tminus') .'</div>';
 			if($omitweeks == 'false'){
 				//set up correct style class for double or triple digit love
 				$wclass = $style.'-dash '.$style.'-weeks_dash';
@@ -263,9 +265,9 @@ class CountDownTimer extends WP_Widget {
         if($bothtml){
             echo  stripslashes($bothtml);    
         }
-		echo '</div>';*/
 		echo '</div>';
-		echo $after_widget;
+		echo '</div>';
+		echo $after_widget;*/
 		//$t = date( 'n/j/Y H:i:s', time() + ( get_option( 'gmt_offset' ) * 3600));
 		$t = date( 'n/j/Y H:i:s', strtotime(current_time('mysql')) );
 		
@@ -556,6 +558,7 @@ function tminuscountdown($atts, $content=null) {
 		'hours' => __('hours', 'tminus'),
 		'minutes' => __('minutes', 'tminus'),
 		'seconds' => __('seconds', 'tminus'),
+		'faltam' => __('faltam', 'tminus'),
 		'omitweeks' => 'false',
 		'style' => 'jedi',
 		'before' => '',
