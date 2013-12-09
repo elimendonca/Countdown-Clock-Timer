@@ -42,7 +42,7 @@ function countdown_scripts(){
 			delete_option( 'rockstar' );
 			add_option('rockstar', '');
 		}
-		$styles_arr = array("hoth","TIE-fighter","c-3po","c-3po-mini","carbonite","carbonite-responsive","carbonlite","darth","jedi");
+		$styles_arr = array("hoth","TIE-fighter","c-3po","c-3po-mini","carbonite","carbonite-responsive","carbonlite","darth","jedi","campori");
 		add_option('t-minus_styles', $styles_arr);
 		$plugin_url = plugins_url() .'/'. dirname( plugin_basename(__FILE__) );
 		wp_enqueue_script('jquery');
@@ -193,7 +193,7 @@ class CountDownTimer extends WP_Widget {
 		
 		
         echo $before_widget;
-        if ( $title ){
+        /* if ( $title ){
             echo $before_title . $title . $after_title;
         }
 		echo '<div id="'.$args['widget_id'].'-widget">';
@@ -201,7 +201,7 @@ class CountDownTimer extends WP_Widget {
         if($tophtml){
             echo stripslashes($tophtml); 
         }
-		echo '</div>';
+		echo '</div>';*/
 		
 		//drop in the dashboard
 		echo '<div id="'.$args['widget_id'].'-dashboard" class="'.$style.'-dashboard">';
@@ -259,11 +259,11 @@ class CountDownTimer extends WP_Widget {
 			</div>
         </div>'; //close the dashboard
 		
-        echo '<div id="'.$args['widget_id'].'-bothtml" class="'.$style.'-bothtml">';
+        /*echo '<div id="'.$args['widget_id'].'-bothtml" class="'.$style.'-bothtml">';
         if($bothtml){
             echo  stripslashes($bothtml);    
         }
-		echo '</div>';
+		echo '</div>';*/
 		echo '</div>';
 		echo $after_widget;
 		//$t = date( 'n/j/Y H:i:s', time() + ( get_option( 'gmt_offset' ) * 3600));
